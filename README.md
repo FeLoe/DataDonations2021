@@ -10,3 +10,5 @@ The general idea is that people only need to bring their phone, all of the data 
 - Scripts for processsing the raw data files
 - Scripts for making visualizations of the processed data (for analysis but also for showing/giving it to participants)
 - Preregistrations for studies
+
+This project ascribes to the [Code of Conduct](../master/CODE_OF_CONDUCT.md).
