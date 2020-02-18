@@ -32,7 +32,7 @@ def main(own_name, file_path, max_exported_messages):
     log.info('Converting to DataFrame...')
     
     
-    df = pd.DataFrame(data, columns = ['date','drop1','other','self','from_self','message','drop2','drop3'])
+    df = pd.DataFrame(data, columns = ['date','drop1','user', 'other', 'from_self','message','drop2','drop3'])
     df = df.drop(['drop1','drop2','drop3'], axis=1)
     df['date'] = [datetime.datetime.fromtimestamp(x) for x in df['date']]
     print(df)
