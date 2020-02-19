@@ -10,11 +10,12 @@ import glob
 import argparse
 import datetime
 import re
+from urlextract import URLExtract
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.INFO)
 log = logging.getLogger(__name__)
-
+extractor = URLExtract()
 
 def main(file_path, max_exported_messages):
     global MAX_EXPORTED_MESSAGES
@@ -37,8 +38,6 @@ def parse_data(file_path):
             documents_of_interest = ['tweet.js', 'personalization.js', 'like.js', 'following.js', 'follower.js', 'ad-impressions.js']
             if filename not in documents_of_interest:
                 continue
-            conversation_id = root.split('/')[-1]
-            conversation_with_name = None
             document = os.path.join(root, filename)
             with open(document, "r") as f:
                 raw_data = ' '.join(f.read().split('\n'))
@@ -67,11 +66,11 @@ def parse_data(file_path):
                 except:
                     log.warning(f"Could not parse {type_of_data}.js correctly.")
             #All the likes of one person (includes text of liked tweet and ID of liked Tweet)
-            #Todo: Extract all the URLs from the liked Tweets
             elif type_of_data == 'like':
                 try:
                     likes_data = json_normalize(json_data)
                     likes_data.columns = likes_data.columns.str.replace('^like.', '')
+                    likes_data['urls'] = [extractor.find_urls(item) for item in data['like.fullText']]
                 except:
                     log.warning(f"Could not parse {type_of_data}.js correctly.")
             #IDs of all the people the respondent follows
