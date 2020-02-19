@@ -15,7 +15,6 @@ log = logging.getLogger(__name__)
 
 
 def main(own_name, file_path, max_exported_messages):
-    print("heeeey")
     global MAX_EXPORTED_MESSAGES
     MAX_EXPORTED_MESSAGES = max_exported_messages
     log.info('Parsing Facebook messenger data...')
@@ -30,8 +29,8 @@ def main(own_name, file_path, max_exported_messages):
         log.info('Nothing to save.')
         exit(0)
     log.info('Converting to DataFrame...')
-    
-    
+
+
     df = pd.DataFrame(data, columns = ['date','drop1','user', 'other', 'from_self','message','drop2','drop3'])
     df = df.drop(['drop1','drop2','drop3'], axis=1)
     df['date'] = [datetime.datetime.fromtimestamp(x) for x in df['date']]
@@ -121,4 +120,3 @@ if __name__ == "__main__":
 
 
     o = main(args.own_name, args.file, 100000)
-    
