@@ -10,3 +10,7 @@ The purpose of the manual pages is twofold: It acts as documentation for the pro
 ### Step 4: Creating a pull request
 Once you think that the manual page is finished, you should create a pull request to merge your branch to the master branch. 
 More info on how to do this [here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request). You should then assign someone to review the changes that you have made - you can just assign them as reviewer. Who you select as reviewer is up to you. 
+
+### Pro tip: 
+You can also embed GIFs into the manual pages, which might be especially helpful for instructions on where to click etc. 
+<img src="https://tenor.com/view/wisdom-wisdomous-intelligent-smart-gif-14536675.gif" width="200">
