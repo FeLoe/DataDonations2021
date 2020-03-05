@@ -11,11 +11,13 @@ import argparse
 import datetime
 import re
 from urlextract import URLExtract
+import os
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.INFO)
 log = logging.getLogger(__name__)
 extractor = URLExtract()
+os.makedirs('data_visualizations', exist_ok = True)
 
 def main(file_path, max_exported_messages):
     global MAX_EXPORTED_MESSAGES
@@ -52,6 +54,7 @@ def parse_data(file_path):
                     tweets_data.columns = tweets_data.columns.str.replace('^entities.|^extended_entities', '')
                     tweets_data['created_at'] = pd.to_datetime(tweets_data['created_at'])
                     tweets_data = tweets_data.drop(['source', 'symbols', 'truncated', 'in_reply_to_status_id_str', 'in_reply_to_user_id_str', 'in_reply_to_screen_name', 'id_str'], axis = 1)
+                    tweets_data.to_csv('data_visualizations/Tweets.csv', index = False, header = True)
                 except:
                     tweets_data = []
             #Personalization: What does Twitter think who you are? Mostly interesting for respondents to look at
