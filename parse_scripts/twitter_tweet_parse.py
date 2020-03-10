@@ -17,7 +17,7 @@ logging.basicConfig()
 logging.getLogger().setLevel(logging.INFO)
 log = logging.getLogger(__name__)
 extractor = URLExtract()
-os.makedirs('data_visualizations', exist_ok = True)
+os.makedirs('../data_visualizations', exist_ok = True)
 
 def main(file_path, max_exported_messages):
     global MAX_EXPORTED_MESSAGES
@@ -28,7 +28,7 @@ def main(file_path, max_exported_messages):
     if len(data) < 1:
         log.info('Nothing to save.')
         exit(0)
-    print(data)
+    print("Done with parsing Twitter data")
 
 
 def parse_data(file_path):
@@ -54,7 +54,8 @@ def parse_data(file_path):
                     tweets_data.columns = tweets_data.columns.str.replace('^entities.|^extended_entities', '')
                     tweets_data['created_at'] = pd.to_datetime(tweets_data['created_at'])
                     tweets_data = tweets_data.drop(['source', 'symbols', 'truncated', 'in_reply_to_status_id_str', 'in_reply_to_user_id_str', 'in_reply_to_screen_name', 'id_str'], axis = 1)
-                    tweets_data.to_csv('data_visualizations/Tweets.csv', index = False, header = True)
+                    
+                    tweets_data.to_csv('../data_visualizations/data/Tweets.csv', index = False, header = True)
                 except:
                     tweets_data = []
             #Personalization: What does Twitter think who you are? Mostly interesting for respondents to look at
@@ -66,6 +67,17 @@ def parse_data(file_path):
                     gender = personalization_data['p13nData.demographics.genderInfo.gender'][0]
                     advertisers = personalization_data['p13nData.interests.audienceAndAdvertisers.advertisers'][0]
                     shows = personalization_data['p13nData.interests.shows'][0]
+
+                    interests.to_csv('../data_visualizations/data/interests.csv', index = False, header = True)
+                    pers_info = {
+                    "age":age,
+                    "gender":gender,
+                    "advertisers":advertisers,
+                    "shows":shows
+                    }
+                    with open('../data_visualizations/data/pers_info.txt', 'w') as file:
+                        file.write(json.dumps(pers_info))
+                    
                 except:
                     log.warning(f"Could not parse {type_of_data}.js correctly.")
             #All the likes of one person (includes text of liked tweet and ID of liked Tweet)
@@ -73,25 +85,33 @@ def parse_data(file_path):
                 try:
                     likes_data = json_normalize(json_data)
                     likes_data.columns = likes_data.columns.str.replace('^like.', '')
-                    likes_data['urls'] = [extractor.find_urls(item) for item in data['like.fullText']]
+                    likes_data['urls'] = [extractor.find_urls(item) for item in likes_data['fullText']]
+                    
+                    likes_data.to_csv('../data_visualizations/data/Likes.csv', index = False, header = True)
                 except:
                     log.warning(f"Could not parse {type_of_data}.js correctly.")
             #IDs of all the people the respondent follows
             elif type_of_data == 'following':
                 try:
                     following_data = json_normalize(json_data)
+
+                    following_data.to_csv('../data_visualizations/data/following_data.csv', index = False, header = True)
                 except:
                     log.warning(f"Could not parse {type_of_data}.js correctly.")
             #IDs of all the people that follow the respondent
             elif type_of_data == 'follower':
                 try:
                     follower_data = json_normalize(json_data)
+
+                    follower_data.to_csv('../data_visualizations/data/follower_data.csv', index = False, header = True)
                 except:
                     log.warning(f"Could not parse {type_of_data}.js correctly.")
             #All of the ad impressions (includes info on advertiser, including Tweet text and URLs)
             elif type_of_data == 'ad_impressions':
                 try:
                     ad_impression_data = pd.concat((json_normalize(item['ad']['adsUserData']['adImpressions']['impressions']) for item in json_data), sort = True)
+
+                    ad_impression_data.to_csv('../data_visualizations/data/ad_impression_data.csv', index = False, header = True)
                 except:
                     log.warning(f"Could not parse {type_of_data}.js correctly.")
             else:
