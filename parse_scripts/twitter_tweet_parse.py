@@ -17,7 +17,7 @@ logging.basicConfig()
 logging.getLogger().setLevel(logging.INFO)
 log = logging.getLogger(__name__)
 extractor = URLExtract()
-os.makedirs('../data_visualizations', exist_ok = True)
+os.makedirs('../data_visualizations/data', exist_ok = True)
 
 def main(file_path, max_exported_messages):
     global MAX_EXPORTED_MESSAGES
