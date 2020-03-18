@@ -72,7 +72,7 @@ def main(own_name, file_path, max_exported_messages, infer_datetime):
     global MAX_EXPORTED_MESSAGES
     MAX_EXPORTED_MESSAGES = max_exported_messages
     log.info('Parsing Whatsapp data...')
-    files = glob.glob(os.path.join(file_path, '*.txt'))
+    files = glob.glob(os.path.join(file_path))
     if len(files) == 0:
         log.error(f'No input files found under {file_path}')
         exit(0)
@@ -88,12 +88,16 @@ def main(own_name, file_path, max_exported_messages, infer_datetime):
     df = df.drop(['drop1','drop2','drop3'], axis=1)
     df['date'] = [datetime.datetime.fromtimestamp(x) for x in df['date']]
     print(df)
-    #df['platform'] = 'whatsapp'
-    #log.info('Detecting languages...')
-    #df = detect_language(df)
-    ## Export
-    #export_dataframe(df, config['whatsapp']['OUTPUT_PICKLE_NAME'])
-    #log.info('Done.')
+
+    # #
+    # df['platform'] = 'whatsapp'
+    # log.info('Detecting languages...')
+    # df = detect_language(df)
+
+    ## Export to csv
+    log.info(f'Exporting data to file ../data_visualizations/data/WhatsApp.csv')
+    df.to_csv('../data_visualizations/data/WhatsApp.csv', index=False)
+    log.info('Done.')
 
 
 def parse_messages(files, own_name, infer_datetime):
