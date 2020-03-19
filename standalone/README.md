@@ -4,4 +4,7 @@ This folder contains code for a standalone executable (binary for Windows, Mac, 
 
 
 Command to generate the executables:
-`pyinstaller --onefile --noconsole mijnvoetsporen.py` or `python3 -m PyInstaller --onefile --noconsole mijnvoetsporen.py`
+
+`pyinstaller --onefile --noconsole --add-data="logo_small.gif:." mijnvoetsporen.py `
+
+`python3 -m PyInstaller --onefile --noconsole --add-data="logo_small.gif:." mijnvoetsporen.py `

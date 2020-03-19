@@ -1,7 +1,22 @@
+import os
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
 WINDOWSIZE = (640, 480)
+
+
+
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 
 
 
@@ -21,7 +36,7 @@ class Mijnvoetsporen():
         self.maincanvas = tk.Canvas(self.frame1, width = windowsize[0], height = windowsize[1])
         self.maincanvas.pack()
 
-        logo = tk.PhotoImage(file="logo_small.gif", master = self.maincanvas)
+        logo = tk.PhotoImage(data=open(resource_path("logo_small.gif"), mode='rb').read(), master = self.maincanvas)
         self.maincanvas.create_image(400, 20, anchor = tk.NW, image = logo)
 
         self.log = tk.Text(self.frame2, height=8, width = 80)
