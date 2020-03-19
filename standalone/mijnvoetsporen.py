@@ -1,4 +1,5 @@
 import os
+import platform
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
@@ -9,6 +10,8 @@ WINDOWSIZE = (640, 480)
 
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
+    if platform.platform() == "Windows":
+        return relative_path
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
         base_path = sys._MEIPASS
