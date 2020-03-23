@@ -5,12 +5,12 @@ This folder contains code for a standalone executable (binary for Windows, Mac, 
 
 Command to generate the executables:
 
-`pyinstaller --onefile --noconsole --add-data="logo_small.gif:." mijnvoetsporen.py`
+`pyinstaller --onefile --noconsole  --icon "logo.icns" --add-data="logo_small.gif:." --add-data="news_list.csv:." mijnvoetsporen.py`
 
 In case you have both the legacy Python2 pyinstaller binary and the Python3 pyinstaller binary installed, you can force your system to use the Python3 version like this:
 
-`python3 -m PyInstaller --onefile --noconsole --add-data="logo_small.gif:." mijnvoetsporen.py`
+`python3 -m PyInstaller --onefile --noconsole  --icon "logo.icns" --add-data="logo_small.gif:." --add-data="news_list.csv:." mijnvoetsporen.py`
 
-On Windows, you need to separate source and destination of data files with a `;` instead of a `:`, like this:
+On Windows, you need to separate source and destination of data files with a `;` instead of a `:` and use a different icon, like this:
 
-`pyinstaller --onefile --noconsole --add-data="logo_small.gif;." mijnvoetsporen.py`
+`pyinstaller --onefile --noconsole --icon "logo.ico" --add-data="logo_small.gif;." --add-data="news_list.csv;." mijnvoetsporen.py`
