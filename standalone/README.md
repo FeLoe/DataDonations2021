@@ -5,12 +5,12 @@ This folder contains code for a standalone executable (binary for Windows, Mac, 
 
 Command to generate the executables:
 
-`pyinstaller --onefile --noconsole  --icon "logo.icns" --add-data="logo_small.gif:." --add-data="news_list.csv:." mijnvoetsporen.py`
+`pyinstaller --onefile --noconsole  --icon "logo.icns" --add-data="logo_small.gif:." --add-data="news_list.csv:." --exclude-module matplotlib --exclude-module zmq --exclude-module pandas --exclude-module numpy  --exclude-module PIL  --exclude-module urllib3 --exclude-module IPython --exclude-module sqlite3 --exclude-module pydoc --exclude-module shelve  mijnvoetsporen.py`
 
 In case you have both the legacy Python2 pyinstaller binary and the Python3 pyinstaller binary installed, you can force your system to use the Python3 version like this:
 
-`python3 -m PyInstaller --onefile --noconsole  --icon "logo.icns" --add-data="logo_small.gif:." --add-data="news_list.csv:." mijnvoetsporen.py`
+`python3 -m PyInstaller --onefile --noconsole  --icon "logo.icns" --add-data="logo_small.gif:." --add-data="news_list.csv:." --exclude-module matplotlib --exclude-module zmq --exclude-module pandas --exclude-module numpy  --exclude-module PIL  --exclude-module urllib3 --exclude-module IPython --exclude-module sqlite3 --exclude-module pydoc --exclude-module shelve  mijnvoetsporen.py`
 
 On Windows, you need to separate source and destination of data files with a `;` instead of a `:` and use a different icon, like this:
 
-`pyinstaller --onefile --noconsole --icon "logo.ico" --add-data="logo_small.gif;." --add-data="news_list.csv;." mijnvoetsporen.py`
+`pyinstaller --onefile --noconsole --icon "logo.ico" --add-data="logo_small.gif;." --add-data="news_list.csv;." --exclude-module matplotlib --exclude-module zmq --exclude-module pandas --exclude-module numpy  --exclude-module PIL  --exclude-module urllib3 --exclude-module IPython --exclude-module sqlite3 --exclude-module pydoc --exclude-module shelve  mijnvoetsporen.py`

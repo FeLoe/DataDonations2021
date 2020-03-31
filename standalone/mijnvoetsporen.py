@@ -4,12 +4,14 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, simpledialog
 import uuid
 from tqdm import tqdm
-import pandas as pd
 import re
 import datetime
-from urlextract import URLExtract
 from collections import Counter
-from pathlib import Path
+import csv
+from dateutil.parser import parse
+import zipfile
+import sys
+from urllib.parse import urljoin, urlparse
 
 
 WINDOWSIZE = (800, 500)
@@ -79,51 +81,83 @@ class Mijnvoetsporen():
         '''
         This function takes the parsed WhatsApp data as input and anonymizes it
         At the moment: removing names and phone numbers, finding URLs, extracting words before and after URLs
-        Matching URLs of the other person against whitelist
+        Matching URLs of the other person against whitelist, removing parameters from all URLs
         Still todo: Words of the other person matched against list of common words, whitelist of URLs should also include
         international sources
         '''
-        df_anonymized = data
-        #Hash authors
-        df_anonymized['author'] = df_anonymized['author'].apply(hash)
-        #Remove phone numbers
-        df_anonymized = df_anonymized.replace(r'@\d+', '', regex = True)
-        #Find URLs and put into new column
-        search = [re.search(regex_url, values).group() if re.search(regex_url, values) != None else "" for values in df_anonymized['message']]
-        df_anonymized['URL'] = search
-        #extract words before and after within a certain timeframe, put into counter and back into dataframe
-        wordlist = list(zip(df_anonymized['date'], df_anonymized['URL'], df_anonymized['message'])) 
-        col_ta = []
-        col_tb = []
-        for j in wordlist:
-            if j[1] != "":
-                text_before = ""
-                cutoff = j[0] - datetime.timedelta(days = days_before)
-                text_after = "" 
-                cutoff2 = j[0] + datetime.timedelta(days = days_after)
-                for j2 in wordlist:
-                    if cutoff <=  j2[0] <= j[0]:    
-                        text_before += " " + j2[2]
-                    elif j[0] < j2[0] <= cutoff2:
-                        text_after += " " + j2[2] 
+        with open(resource_path(names_urls), newline='') as f:
+            reader = csv.reader(f)
+            URL_list = [item for sublist in list(reader) for item in sublist]
+
+        data_anonymized = data
+        try: 
+            for sublist in data_anonymized:
+                #find URLs, put them in separate column, remove phone numbers (@mentions), hash names
+                result = re.search(regex_url, sublist[4]).group() if re.search(regex_url, sublist[4]) != None else ""
+                sublist[4] = re.sub(regex_url, "", sublist[4])
+                sublist[4] = re.sub(r'@\d+', '', sublist[4])
+                sublist.append(result)
+                sublist[2] = hash(sublist[2])
+                #Whitelist URLs for third parties, remove parameters
+                try:
+                    if sublist[3] is False:
+                        if sublist[5] == "":
+                            pass
+                        elif isinstance(sublist[5], list):
+                            newlist = []
+                            for item in sublist[5]: 
+                                if any(f in item for f in URL_list):
+                                    newlist.append(item)
+                                else: 
+                                    newlist.append("WHITELISTED")
+                            sublist[5] = newlist
+                        elif any(f in sublist[5] for f in URL_list):
+                            sublist[5] = urljoin(sublist[5], urlparse(sublist[5]).path)
+                            pass
+                        else:
+                            sublist[5] = "WHITELISTED"
                     else:
-                        pass               
-                text_after = dict(Counter(text_after.split()[:word_window]))
-                text_before = dict(Counter(text_before.split()[word_window:]))                
-            else:              
-                text_before = ''      
-                text_after = ''      
-            col_tb.append(text_before)
-            col_ta.append(text_after)
-        df_anonymized['words_before'] = col_tb
-        df_anonymized['words_after'] = col_ta
-        #Load list of whitelisted URLs
-        URL_list = pd.read_csv(resource_path(names_urls))['News'].tolist()
-        #For the messages of the other person, whitelist the URLs (not for the participant)
-        df_anonymized['URLs_cleaned'] = df_anonymized['URL'].apply(lambda x: x if any(f in x for f in URL_list) else "")
-        df_anonymized['URL'] = df_anonymized['URL'].where(df_anonymized['from_self'] == True, df_anonymized['URLs_cleaned'])
-        df_anonymized = df_anonymized.drop(['message', 'URLs_cleaned'], axis = 1)
-        return df_anonymized
+                        if sublist[5] != "":
+                            sublist[5] = urljoin(sublist[5], urlparse(sublist[5]).path)
+                        else: 
+                            pass
+                except Exception as e:
+                    self.log.insert(tk.END, e)
+                else:
+                    pass
+                #Find text within a window before and after (based on word count + date), make BOW out of it
+                if sublist[5] != "":
+                    text_before = ""
+                    cutoff = sublist[0] - datetime.timedelta(days = days_before)
+                    text_after = "" 
+                    cutoff2 = sublist[0] + datetime.timedelta(days = days_after)
+                    for sublist2 in data_anonymized:
+                        if cutoff <=  sublist2[0] <= sublist[0]:  
+                            text_before += " " + sublist2[4]
+                        elif sublist[0] < sublist2[0] <= cutoff2:
+                            text_after += " " + sublist2[4] 
+                        else:
+                            pass
+                    if len(text_before) > word_window:       
+                        text_before = dict(Counter(text_before.split()[-word_window:])) 
+                    else: 
+                        text_before = dict(Counter(text_before.split()))
+                    if len(text_after) > word_window: 
+                        text_after = dict(Counter(text_after.split()[:word_window]))
+                    else: 
+                        text_after = dict(Counter(text_after.split()))
+                    sublist.append(text_before)
+                    sublist.append(text_after)             
+                else:              
+                    text_before = ''      
+                    text_after = '' 
+                    sublist.append(text_before)
+                    sublist.append(text_after)   
+            for sublist in data_anonymized: 
+                del sublist[4]
+        except Exception as e: 
+             self.log.insert(tk.END, e)
+        return data_anonymized
 
     def whatsapp(self):
         '''
@@ -132,14 +166,33 @@ class Mijnvoetsporen():
         '''
         #Have participant retrieve the filename(s) and ask for their name (important for anonymizing properly)
         filename =  list(filedialog.askopenfilenames(initialdir = ".",title = "Select file"))
-        self.log.insert(tk.END, "Je hebt de volgende bestanden gekozen voor je Whatsapp-takeout: {}\n\n".format(filename))
+        filename_final = []
+        n = 0 
+        try: 
+            for item in filename: 
+                if item.endswith('.zip'):
+                    zipdata = zipfile.ZipFile(item)
+                    zipinfos =zipdata.infolist()
+                    for zipinfo in zipinfos: 
+                        n += 1
+                        if os.path.exists(os.path.join(os.path.dirname(filename[0]), zipinfo.filename)):
+                            zipinfo.filename = zipinfo.filename[:5] + str(n) + zipinfo.filename[5:]
+                        else: 
+                            pass
+                        filename_final.append(os.path.join(os.path.dirname(filename[0]), zipinfo.filename))
+                        zipdata.extract(zipinfo, path = os.path.join(os.path.dirname(filename[0])))
+                else:
+                    filename_final.append(item)
+        except Exception as e: 
+            self.log.insert(tk.END, e)
+        self.log.insert(tk.END, "Je hebt de volgende bestanden gekozen voor je Whatsapp-takeout: {}\n\n".format(filename_final))
         try: 
             own_name = simpledialog.askstring("Input", "Welke naam gebruik je in WhatsApp?",parent=self.root)
         except Exception as e: 
             self.log.insert(tk.END, e)
         #Make new directory where the output files will be saved and let user know where they will be saved
         try:
-            newpath = os.path.join(os.path.dirname(filename[0]), "footprint_data")
+            newpath = os.path.join(os.path.dirname(filename_final[0]), "footprint_data")
             if not os.path.exists(newpath):
                 os.mkdir(os.path.join(newpath))
             self.log.insert(tk.END, "Jouw bestanden worden opgeslagen in de map : {}\n".format(newpath))
@@ -150,7 +203,7 @@ class Mijnvoetsporen():
         data = []
         text = None
         try: 
-            for file in filename: 
+            for file in filename_final: 
                 count = len(open(file, encoding = 'utf8').readlines(  )) 
                 conversation_id = uuid.uuid4().hex
                 participants = set()
@@ -175,7 +228,7 @@ class Mijnvoetsporen():
                             continue
                         try:
                         # get timestamp of message
-                            new_timestamp = pd.to_datetime(groups[0]).timestamp()
+                            new_timestamp = parse(groups[0])
                         except ValueError:
                         # Datetime could not be parsed
                             text += '\n' + line.strip()
@@ -198,15 +251,20 @@ class Mijnvoetsporen():
         except Exception as e: 
             self.log.insert(tk.END, "This is the error: {}".format(e))
         #Write raw file and anonymized file
-        try: 
-            df = pd.DataFrame(data, columns = ['date','conversation_id', 'author','from_self','message'])
-            df['date'] = [datetime.datetime.fromtimestamp(x) for x in df['date']]
-            df.to_csv(os.path.join(newpath, "processed_whatsapp_raw.csv"), index=False)
-            df_anonymized = self.anonymize(df)
-            df_anonymized.to_csv(os.path.join(newpath, "processed_whatsapp_final.csv"), index=False)
+        try:
+            header = ['date','conversation_id', 'author','from_self','message']
+            with open(os.path.join(newpath, "processed_whatsapp_raw.csv"), "w", newline="", encoding = "utf8") as f:
+                writer = csv.writer(f)
+                writer.writerow(header)
+                writer.writerows(data) 
+            data_anonymized = self.anonymize(data)
+            header_a = ['date','conversation_id', 'author','from_self', 'URL', 'text_before', 'text_after']
+            with open(os.path.join(newpath, "processed_whatsapp_final.csv"), "w", newline="", encoding = "utf8") as f:
+                writer = csv.writer(f)
+                writer.writerow(header_a)
+                writer.writerows(data_anonymized) 
         except Exception as e: 
             self.log.insert(tk.END, "{}".format(e))
-
 
 
 
