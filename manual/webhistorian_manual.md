@@ -42,8 +42,7 @@ of voor **Safari** [hier](https://github.com/Filter-Bubble/Filter-Bubble.github.
 
 - Tip: Als je probeert de app te openen zie je misschien dit:
 <img src="https://i0.wp.com/www.reviewcentralme.com/wp-content/uploads/2017/04/Image-1.png" width="200">
-      In dit geval moet je control (CTRL) + klikken of met twee vingers klikken om naar de menu te komen en op 
-      'Open' klikken.
+In dit geval moet je control (CTRL) + klikken of met twee vingers klikken om naar de menu te komen en op 'Open' klikken.
   <p float="left"><img src="https://i1.wp.com/www.reviewcentralme.com/wp-content/uploads/2017/04/Image-2.png" align="center" width="100"><img align="center" src="https://i0.wp.com/www.reviewcentralme.com/wp-content/uploads/2017/04/Image-3.png" width="200"></p>
 
 #### Windows gebruikers: 
