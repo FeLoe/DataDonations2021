@@ -24,6 +24,10 @@ In deze instructie laten we zien hoe u uw WhatsApp-data kunt downloaden. Wanneer
 
 ##### 4. Selecteer Menu → ‘More’ → ‘Export chat’ (zie onderstaande afbeeldingen)
 
+![1](1.jpg)
+![2](2.jpg)
+![3](3.jpg)
+
 ##### 5. Selecteer ‘WITHOUT MEDIA’
 
 ##### 6. Selecteer Gmail als verzendmethode
@@ -33,6 +37,10 @@ In deze instructie laten we zien hoe u uw WhatsApp-data kunt downloaden. Wanneer
 ##### 7. Plaats uw persoonlijke mailadres in het adresveld
 
 - Uw WhatsApp-data wordt automatisch als bijlage bij de mail verzonden.
+
+![4](4.jpg)
+![5](5.jpg)
+![6](6.jpg)
 
 ##### 8. Op uw laptop/PC: open de mail en download de WhatsApp-data
 
