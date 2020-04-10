@@ -35,7 +35,7 @@ Op Mac devices is dit meestaal al gebeurd - maar we adviseren je om dit even te 
 - Op je *Mac*: Ga naar **System Preferences** > **iCloud** en controleer of de Safari-icoon is aangevinkt.
 - Op je *iPhone*: Ga naar **Instellingen** > **Account** > **iCloud** en controleer of de Safari-icoon is aangevinkt.
 
-### Instaleer Webhistorian 
+### Installeer Webhistorian 
 #### Mac gebruikers: 
 Installeer WebHistorian voor **Google Chrome** [hier](https://github.com/Filter-Bubble/Filter-Bubble.github.io/raw/master/extensions/WebHistorianCommunityMacChrome.dmg)
 of voor **Safari** [hier](https://github.com/Filter-Bubble/Filter-Bubble.github.io/raw/master/extensions/WebHistorianCommunityMacSafari.dmg)
