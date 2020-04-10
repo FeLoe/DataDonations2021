@@ -12,13 +12,13 @@ In deze instructie laten we zien hoe u uw WhatsApp-data kunt downloaden op een t
 
 ### 4. Selecteer de chat → ‘Media, links en docs’ → ‘Links’ 
 
+### 5. Selecteer ‘exporteer chat’ -> E-mail -> 'Zonder media' (zie onderstaande afbeeldingen)
+
+- U kunt zelf kiezen via welk kanaal u uw WhatsApp-data naar uw PC/laptop wenst te transporteren. In deze instructie kiezen wij ervoor de data via **E-mail** te verzenden. U kunt desgewenst ook gebruikmaken van AirDrop (als u een laptop gebruikt van het merk Apple), van **Bluetooth**, of een andere methode. In de vervolgstappen gaan we ervan uit dat u E-mail selecteert. (**Let op!** U verzend de data bij deze stap nog niet naar de onderzoekers).
+
 ![1](iOS1.jpg)
 ![2](iOS2.jpg)
 ![3](iOS3.jpg)
-
-### 5. Selecteer ‘exporteer chat’ -> Mail -> 'Zonder media' (zie bovenstaande afbeeldingen)
-
-- U kunt zelf kiezen via welk kanaal u uw WhatsApp-data naar uw PC/laptop wenst te transporteren. In deze instructie kiezen wij ervoor de data via **mail** te verzenden. U kunt desgewenst ook gebruikmaken van AirDrop (als u een laptop gebruikt van het merk Apple), van **Bluetooth**, of een andere methode. In de vervolgstappen gaan we ervan uit dat u mail selecteert. (**Let op!** U verzend de data bij deze stap nog niet naar de onderzoekers).
 
 ### 6. Plaats uw persoonlijke mailadres in het adresveld
 
