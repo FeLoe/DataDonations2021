@@ -9,9 +9,8 @@ Please read these instructions carefully and proceed only if you are sure about 
 ## 1  Retrieve WhatsApp info
 Retrieving WhatsApp data works slightly different for different phone operating systems. We have incorporated user manuals for the two most common ones: Android and iOS. Both manuals are designed to be user-friendly even for audiences with low digital literacy.
 
-Click [here](https://github.com/FeLoe/Lab2020/blob/WhatsApp_Manual/manual/WhatsApp/Android_NL.md) for the Dutch Android instructions.
-
-Click [here](https://github.com/FeLoe/Lab2020/blob/WhatsApp_Manual/manual/WhatsApp/iOS_NL.md) for the Dutch iOS instructions.
+* Click [here](https://github.com/FeLoe/Lab2020/blob/WhatsApp_Manual/manual/WhatsApp/Android_NL.md) for the Dutch Android instructions.
+* Click [here](https://github.com/FeLoe/Lab2020/blob/WhatsApp_Manual/manual/WhatsApp/iOS_NL.md) for the Dutch iOS instructions.
 
 ## 2  Send to email / drive
 ## 3 Parse
