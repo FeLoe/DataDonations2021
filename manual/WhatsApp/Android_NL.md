@@ -6,9 +6,7 @@ In deze instructie laten we zien hoe u uw WhatsApp-data kunt downloaden op een t
 
 ### 2. Kies de groepen waarvan u uw data wilt opvragen.
 
- - Voor dit onderzoek willen we u vragen **de vijf WhatsApp-chatgroepen 
-   te kiezen waarin u het meeste over nieuws praat.** Dit mogen   
-   groepschats zijn, maar ook chats met één andere persoon.
+ - Voor dit onderzoek willen we u vragen **de vijf WhatsApp-chatgroepen te kiezen waarin u het meeste over nieuws praat.** Dit mogen groepschats zijn, maar ook chats met één andere persoon.
 
 ### 3. Selecteer één van de chats waarvan u de data wilt opvragen.
 
