@@ -4,13 +4,13 @@ In deze instructie laten we zien hoe u uw WhatsApp-data kunt downloaden op een t
 
 Wanneer u onderstaande stappen volgt, heeft u uw WhatsApp-data voor verschillende groepen op uw pc zodat u die daarna kan transformeren en inleveren.
 
-### 1. Open WhatsApp op uw telefoon.
+### 1. Open WhatsApp op uw telefoon
 
-### 2. Kies de groepen waarvan u uw data wilt opvragen.
+### 2. Kies de groepen waarvan u uw data wilt opvragen
 
  - Voor dit onderzoek willen we u vragen **de vijf WhatsApp-chatgroepen te kiezen waarin u het meeste over nieuws praat.** Dit mogen groepschats zijn, maar ook chats met één andere persoon.
 
-### 3. Selecteer één van de chats waarvan u de data wilt opvragen.
+### 3. Selecteer één van de chats waarvan u de data wilt opvragen
 
 ### 4. Selecteer Menu → ‘More’ → ‘Export chat’ (zie onderstaande afbeeldingen)
 
