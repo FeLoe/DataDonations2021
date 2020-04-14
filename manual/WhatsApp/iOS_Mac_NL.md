@@ -30,10 +30,6 @@ Wanneer u onderstaande stappen volgt, heeft u uw WhatsApp-data voor verschillend
 
 - Uw WhatsApp-data wordt automatisch als bijlage bij de mail verzonden.
 
-![4](4.jpg)
-![5](5.jpg)
-![6](6.jpg)
-
 ### 8. Op uw laptop/PC: open de mail en download de WhatsApp-data
 
 - Als het goed is, is de mail met uw WhatsApp-data naar uw persoonlijke mail verzonden. Dit kan, afhankelijk van de snelheid van uw internetverbinding, enige tijd in beslag nemen. U download de WhatsApp-data door de bijlage in de mail te downloaden die eindigt op ‘.txt’. Grote kans dat het een zip-bestand is. Dit maakt niks uit, ook dit bestand kan worden gebruikt.  
