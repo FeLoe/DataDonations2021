@@ -46,7 +46,7 @@ U heeft nu 5 tekstbestanden gedownload op uw computer.
 
 Mijn Voetsporen applicatie transformeert de chats in een geanonimiseerde samenvatting. 
 
-Download de applicatie voor Windows[hier](https://github.com/FeLoe/Lab2020/blob/standalone/standalone/dist/mijnvoetsporen-windows-multiplefiles.zip) 
+Download de applicatie voor Windows [hier](https://github.com/FeLoe/Lab2020/blob/standalone/standalone/dist/mijnvoetsporen-windows-multiplefiles.zip) 
 
 ### 12. Mijn Voetsporen applicatie downloaden voor Windows
 
@@ -61,7 +61,7 @@ Vervolgens kunt u de 5 bestanden uploaden in de Mijn Voetsporen applicatie.
 
 ![Extra4](Extra4.jpg)
 
-### 14. Het mailen van de geanonimiseerde bestanden. 
+### 14. Het mailen van de geanonimiseerde bestanden
 Van elk bestand krijgt u nu een bestand met de naam 'foot_print data', bestaande uit twee CSV bestanden. Het kan zijn dat dit al in het bestaande bestand staat, maar het kan ook buiten het originele WhatsApp bestand staan. Check dit goed! 
 
 Als laatste stap mail je de 5 'footprint_data' bestanden naar: j.vander.erve@student.vu.nl 
