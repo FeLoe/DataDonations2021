@@ -59,11 +59,12 @@ Vervolgens klik je op 'download' (zie de eerste afbeelding). Het bestand dat wor
 ### 13. Het uploaden van de 5 WhatsApp bestanden.
 Vervolgens kunt u de 5 bestanden uploaden in de Mijn Voetsporen applicatie. 
 
-Foto 4
+![Extra4](Extra4.jpg)
 
 ### 14. Het mailen van de geanonimiseerde bestanden. 
 Van elk bestand krijgt u nu een bestand met de naam 'foot_print data', bestaande uit twee CSV bestanden. Het kan zijn dat dit al in het bestaande bestand staat, maar het kan ook buiten het originele WhatsApp bestand staan. Check dit goed! 
 
 Als laatste stap mail je de 5 'footprint_data' bestanden naar: j.vander.erve@student.vu.nl 
 
-Foto 5, Foto 6
+![Extra5](Extra5.jpg)
+![Extra6](Extra6.jpg)
