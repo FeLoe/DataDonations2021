@@ -36,26 +36,26 @@ Wanneer u onderstaande stappen volgt, heeft u uw WhatsApp-data voor verschillend
 
 - Als het goed is, is de mail met uw WhatsApp-data naar uw persoonlijke mail verzonden. Dit kan, afhankelijk van de snelheid van uw internetverbinding, enige tijd in beslag nemen. U download de WhatsApp-data door de bijlage in de mail te downloaden die eindigt op ‘.txt’. Grote kans dat het een zip-bestand is. Dit maakt niks uit, ook dit bestand kan worden gebruikt.  
 
-### 9. Herhaal stap 4 t/m 9 voor de andere vier chats waarvan u de data wilt opvragen.
+### 9. Herhaal stap 4 t/m 9 voor de andere vier chats waarvan u de data wilt opvragen
 
 ### 10. U heeft nu uw WhatsApp-data gedownload!
 
 U heeft nu 5 tekstbestanden gedownload op uw computer. 
 
-### 11. De volgende stap is om de Mijn Voetsporen Applicatie te downloaden!
+### 11. De volgende stap is om de Mijn Voetsporen applicatie te downloaden
 
 Mijn Voetsporen applicatie transformeert de chats in een geanonimiseerde samenvatting. 
 
 Download de applicatie voor Windows hier. https://github.com/FeLoe/Lab2020/blob/standalone/standalone/dist/mijnvoetsporen-windows-multiplefiles.zip
 
-### 12. Mijn Voetsporen applicatie voor Windows!
+### 12. Mijn Voetsporen applicatie downloaden voor Windows
 
 Vervolgens klik je op 'download' (zie de eerste afbeelding). Het bestand dat wordt gedownload is een zip-bestand. Deze dient te worden uitgepakt en ergens op je computer te worden opgeslagen (hoe het uitgepakte bestand en het zip bestand (met rits) eruit zien zie je in de tweede afbeelding). Het uitgepakte bestand wordt vervolgens geopend en daarin staat Mijn Voetsporen deze kan worden geopend (zie de laatste afbeelding). Meldingen van eventuele virusscanners kunt u negeren. Het programma is veilig en kan zonder risico's worden uitgevoerd.
 
 Foto 1 ,  Foto 2,   Foto 3.
 
-### 13. Het uploaden van WhatsApp bestanden.
-Vervolgens kunt u de 5 bestanden uploaden in de applicatie. 
+### 13. Het uploaden van de 5 WhatsApp bestanden.
+Vervolgens kunt u de 5 bestanden uploaden in de Mijn Voetsporen applicatie. 
 
 Foto 4
 
