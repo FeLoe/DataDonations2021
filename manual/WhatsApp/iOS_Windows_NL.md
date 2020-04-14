@@ -14,7 +14,7 @@ In deze instructie laten we zien hoe u uw WhatsApp-data kunt downloaden op een t
 
 ### 5. Selecteer ‘exporteer chat’ -> E-mail -> 'Zonder media' (zie onderstaande afbeeldingen)
 
-- U kunt zelf kiezen via welk kanaal u uw WhatsApp-data naar uw PC/laptop wenst te transporteren. In deze instructie kiezen wij ervoor de data via **E-mail** te verzenden. U kunt desgewenst ook gebruikmaken van AirDrop (als u een laptop gebruikt van het merk Apple), van **Bluetooth**, of een andere methode. In de vervolgstappen gaan we ervan uit dat u E-mail selecteert. (**Let op!** U verzend de data bij deze stap nog niet naar de onderzoekers).
+- U kunt zelf kiezen via welk kanaal u uw WhatsApp-data naar uw PC/laptop wenst te transporteren. In deze instructie kiezen wij ervoor de data via **E-mail** te verzenden. U kunt desgewenst ook gebruikmaken van **Bluetooth**, of een andere methode. In de vervolgstappen gaan we ervan uit dat u E-mail selecteert. (**Let op!** U verzend de data bij deze stap nog niet naar de onderzoekers).
 
 ![1](iOS1.jpg)
 ![2](iOS2.jpg)
@@ -31,3 +31,32 @@ In deze instructie laten we zien hoe u uw WhatsApp-data kunt downloaden op een t
 ### 8. Herhaal stap 4 t/m 9 voor de andere vier chats waarvan u de data wilt opvragen.
 
 ### 9. U heeft nu uw WhatsApp-data gedownload!
+
+U heeft nu 5 tekstbestanden gedownload op uw computer. 
+
+### 10. De volgende stap is om de Mijn Voetsporen applicatie te downloaden
+
+Mijn Voetsporen applicatie transformeert de chats in een geanonimiseerde samenvatting. 
+
+Download de applicatie voor Windows [hier](https://github.com/FeLoe/Lab2020/blob/standalone/standalone/dist/mijnvoetsporen-windows-multiplefiles.zip?raw=True) 
+
+### 11. Mijn Voetsporen applicatie downloaden voor Windows
+
+Vervolgens klik je op 'download' (zie de eerste afbeelding). Het bestand dat wordt gedownload is een zip-bestand. Deze dient te worden uitgepakt en ergens op je computer te worden opgeslagen (hoe het uitgepakte bestand en het zip bestand (met rits) eruit zien zie je in de tweede afbeelding). Het uitgepakte bestand wordt vervolgens geopend en daarin staat Mijn Voetsporen deze kan worden geopend (zie de laatste afbeelding). Meldingen van eventuele virusscanners kunt u negeren. Het programma is veilig en kan zonder risico's worden uitgevoerd.
+
+<img src=Extra1.jpg width="500">
+<img src=Extra2.jpg width="500">
+<img src=Extra3.jpg width="500">
+
+### 12. Het uploaden van de 5 WhatsApp bestanden.
+Vervolgens kunt u de 5 bestanden uploaden in de Mijn Voetsporen applicatie. U kunt alle bestanden in één keer selecteren om ze te uploaden naar de applicatie. 
+
+<img src=Extra4.jpg width="500">
+
+### 13. Het mailen van de geanonimiseerde bestanden
+U krijgt nu een bestand met de naam 'foot_print data', bestaande uit twee CSV bestanden. Het kan zijn dat dit al in het bestaande bestand staat, maar het kan ook buiten het originele WhatsApp bestand staan. Check dit goed!
+
+Kies nu de bestand "processed_whatsapp_final" en mail het naar: j.vander.erve@student.vu.nl 
+
+<img src=Extra5.jpg width="500">
+<img src=Extra6.jpg width="500">
