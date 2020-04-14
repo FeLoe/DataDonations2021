@@ -12,11 +12,13 @@ Wanneer u onderstaande stappen volgt, heeft u uw WhatsApp-data voor verschillend
 
 ### 3. Selecteer één van de chats waarvan u de data wilt opvragen
 
-### 4. Selecteer Menu → ‘More’ → ‘Export chat’ (zie onderstaande afbeeldingen)
+### 4. Selecteer ‘exporteer chat’ -> E-mail -> 'Zonder media' (zie onderstaande afbeeldingen)
 
-![1](1.jpg)
-![2](2.jpg)
-![3](3.jpg)
+- U kunt zelf kiezen via welk kanaal u uw WhatsApp-data naar uw PC/laptop wenst te transporteren. In deze instructie kiezen wij ervoor de data via **E-mail** te verzenden. U kunt desgewenst ook gebruikmaken van AirDrop (als u een laptop gebruikt van het merk Apple), van **Bluetooth**, of een andere methode. In de vervolgstappen gaan we ervan uit dat u E-mail selecteert. (**Let op!** U verzend de data bij deze stap nog niet naar de onderzoekers).
+
+![1](iOS1.jpg)
+![2](iOS2.jpg)
+![3](iOS3.jpg)
 
 ### 5. Selecteer ‘ZONDER MEDIA’
 
