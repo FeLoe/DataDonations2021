@@ -46,7 +46,7 @@ U heeft nu 5 tekstbestanden gedownload op uw computer.
 
 Mijn Voetsporen applicatie transformeert de chats in een geanonimiseerde samenvatting. 
 
-Download de applicatie voor Windows hier. https://github.com/FeLoe/Lab2020/blob/standalone/standalone/dist/mijnvoetsporen-windows-multiplefiles.zip
+Download de applicatie voor Windows[hier](https://github.com/FeLoe/Lab2020/blob/standalone/standalone/dist/mijnvoetsporen-windows-multiplefiles.zip) 
 
 ### 12. Mijn Voetsporen applicatie downloaden voor Windows
 
