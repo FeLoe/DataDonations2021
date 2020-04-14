@@ -52,19 +52,19 @@ Download de applicatie voor Windows [hier](https://github.com/FeLoe/Lab2020/blob
 
 Vervolgens klik je op 'download' (zie de eerste afbeelding). Het bestand dat wordt gedownload is een zip-bestand. Deze dient te worden uitgepakt en ergens op je computer te worden opgeslagen (hoe het uitgepakte bestand en het zip bestand (met rits) eruit zien zie je in de tweede afbeelding). Het uitgepakte bestand wordt vervolgens geopend en daarin staat Mijn Voetsporen deze kan worden geopend (zie de laatste afbeelding). Meldingen van eventuele virusscanners kunt u negeren. Het programma is veilig en kan zonder risico's worden uitgevoerd.
 
-![Extra1](Extra1.jpg)
-![Extra2](Extra2.jpg)
-![Extra3](Extra3.jpg)
+<img src=Extra1.jpg width="500">
+<img src=Extra2.jpg width="500">
+<img src=Extra3.jpg width="500">
 
 ### 13. Het uploaden van de 5 WhatsApp bestanden.
 Vervolgens kunt u de 5 bestanden uploaden in de Mijn Voetsporen applicatie. 
 
-![Extra4](Extra4.jpg)
+<img src=Extra4.jpg width="500">
 
 ### 14. Het mailen van de geanonimiseerde bestanden
 Van elk bestand krijgt u nu een bestand met de naam 'foot_print data', bestaande uit twee CSV bestanden. Het kan zijn dat dit al in het bestaande bestand staat, maar het kan ook buiten het originele WhatsApp bestand staan. Check dit goed! 
 
 Als laatste stap mail je de 5 'footprint_data' bestanden naar: j.vander.erve@student.vu.nl 
 
-![Extra5](Extra5.jpg)
-![Extra6](Extra6.jpg)
+<img src=Extra5.jpg width="500">
+<img src=Extra6.jpg width="500">
