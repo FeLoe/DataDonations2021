@@ -1,5 +1,5 @@
 
-# Android Instructie
+# Android Windows Instructie
 In deze instructie laten we zien hoe u uw WhatsApp-data kunt downloaden op een telefoon met het Android-besturingssysteem en hoe daarna de Mijn Voetsporen applicatie een geanonimiseerde samenvatting maakt van de chats, tot slot wordt deze laatst genoemde data via de mail aan ons gedoneerd.
 
 Wanneer u onderstaande stappen volgt, heeft u uw WhatsApp-data voor verschillende groepen op uw pc zodat u die daarna kan transformeren en inleveren.
