@@ -1,5 +1,5 @@
 
-# iOS Instructie
+# iOS Windows Instructie
 In deze instructie laten we zien hoe u uw WhatsApp-data kunt downloaden op een telefoon met het iOS-besturingssysteem. Wanneer u onderstaande stappen volgt, heeft u uw WhatsApp-data voor verschillende groepen op uw pc.
 
 ### 1. Open WhatsApp op uw telefoon.
