@@ -50,11 +50,15 @@ Download de applicatie voor Windows [hier](https://github.com/FeLoe/Lab2020/blob
 
 ### 12. Mijn Voetsporen applicatie downloaden voor Windows
 
-Vervolgens klik je op 'download' (zie de eerste afbeelding). Het bestand dat wordt gedownload is een zip-bestand. Deze dient te worden uitgepakt en ergens op je computer te worden opgeslagen (hoe het uitgepakte bestand en het zip bestand (met rits) eruit zien zie je in de tweede afbeelding). Het uitgepakte bestand wordt vervolgens geopend en daarin staat Mijn Voetsporen deze kan worden geopend (zie de laatste afbeelding). Meldingen van eventuele virusscanners kunt u negeren. Het programma is veilig en kan zonder risico's worden uitgevoerd.
+Vervolgens klik je op 'download' (zie de eerste afbeelding). Het bestand dat wordt gedownload is een zip-bestand. Deze dient te worden uitgepakt en ergens op je computer te worden opgeslagen (hoe het uitgepakte bestand en het zip bestand (met rits) eruit zien zie je in de tweede afbeelding). Het uitgepakte bestand wordt vervolgens geopend en daarin staat Mijn Voetsporen deze kan worden geopend (zie de laatste afbeelding). 
+
+Meldingen van eventuele virusscanners kunt u negeren. Het programma is veilig en kan zonder risico's worden uitgevoerd. Mocht u een virusscanner tegenkomen klik dan zoals te zien is op de vierde afbeelding op 'toch uitvoeren'. Als je de Norton Virusscanner hebt klik dan op 'herstellen' zoals te zien is in de 5e afbeelding. Hierna kunt u in het uitgepakte bestand de Mijn Voetsporen app zonder problemen openenen. Als u een andere virusscanner heeft bel mij dan gelijk: 0624920355. 
 
 <img src=Extra1.jpg width="500">
 <img src=Extra2.jpg width="500">
 <img src=Extra3.jpg width="500">
+<img src=Virus1.png width="500">
+<img src=Virus1.png width="500">
 
 ### 13. Het uploaden van de 5 WhatsApp bestanden.
 Vervolgens kunt u de 5 bestanden uploaden in de Mijn Voetsporen applicatie. U kunt alle bestanden in één keer selecteren om ze te uploaden naar de applicatie. 
