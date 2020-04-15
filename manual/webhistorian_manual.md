@@ -48,3 +48,9 @@ In dit geval moet je control (CTRL) + klikken of met twee vingers klikken om naa
 #### Windows gebruikers: 
 Installeer WebHistorian voor Google Chrome [hier](https://github.com/Filter-Bubble/Filter-Bubble.github.io/raw/master/extensions/WebHistorianCommunityWindowsChrome.exe)
 
+Meldingen van eventuele virusscanners kunt u negeren. Het programma is veilig en kan zonder risico's worden uitgevoerd. Mocht u een virusscanner tegenkomen klik dan zoals te zien is op de eerste afbeelding op 'toch uitvoeren'. Als je de Norton Virusscanner hebt klik dan op 'herstellen' zoals te zien is in de afbeelding. Hierna kunt u in het uitgepakte bestand Webhistorian Community Edition app zonder problemen openenen. 
+
+Als u een andere virusscanner heeft en tegen problemen aanloopt met downloaden -> bel mij dan gelijk: 0624920355. 
+
+<img src=Virus1.JPG width="500">
+<img src=virus2.JPG width="500">
