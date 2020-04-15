@@ -57,8 +57,8 @@ Meldingen van eventuele virusscanners kunt u negeren. Het programma is veilig en
 <img src=Extra1.jpg width="500">
 <img src=Extra2.jpg width="500">
 <img src=Extra3.jpg width="500">
-<img src=Virus1.png width="500">
-<img src=Virus1.png width="500">
+<img src=Virus1.jpg width="500">
+<img src=virus2.jpg width="500">
 
 ### 13. Het uploaden van de 5 WhatsApp bestanden.
 Vervolgens kunt u de 5 bestanden uploaden in de Mijn Voetsporen applicatie. U kunt alle bestanden in één keer selecteren om ze te uploaden naar de applicatie. 
