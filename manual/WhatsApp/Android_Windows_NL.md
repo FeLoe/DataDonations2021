@@ -74,3 +74,5 @@ Het bestand "processed_whatsapp_final" is volledig geanonimiseerd (u kunt dit ch
 
 <img src=Extra5.jpg width="500">
 <img src=Extra6.jpg width="500">
+
+U kunt nu terug gaan naar de [survey](https://vuass.eu.qualtrics.com/jfe/form/SV_5jvrayzeLrKQO69) 
