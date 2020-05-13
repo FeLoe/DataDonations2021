@@ -63,7 +63,7 @@ Vervolgens kunt u de 5 bestanden uploaden in de Mijn Voetsporen applicatie. U ku
 ### 14. Het mailen van de geanonimiseerde bestanden
 U krijgt nu een bestand met de naam 'foot_print data', bestaande uit twee CSV bestanden. Het kan zijn dat dit al in het bestaande bestand staat, maar het kan ook buiten het originele WhatsApp bestand staan. Check dit goed!
 
-Kies alleen het bestand "processed_whatsapp_final" en mail het naar: j.vander.erve@student.vu.nl.
+Kies alleen het bestand "processed_whatsapp_final" en "uploadt" dit bestand in de vragenlijst.
 
 Het bestand "processed_whatsapp_final" is volledig geanonimiseerd (u kunt dit checken) en is op geen enkele manier terug te leiden naar uw persoonlijke gegevens. 
 
