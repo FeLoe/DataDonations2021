@@ -67,7 +67,7 @@ Kies alleen het bestand "processed_whatsapp_final". Het bestand "processed_whats
 
 Mail dit bestand (LET OP juiste bestand dus) naar j.vander.erve@student.vu.nl
 
-Ga terug naar de[survey](https://vuamsterdam.eu.qualtrics.com/jfe/form/SV_b3BpjjteY6l24Kx) zodat u de laatste vraag kan beantwoorden. 
+Ga terug naar de [survey](https://vuamsterdam.eu.qualtrics.com/jfe/form/SV_b3BpjjteY6l24Kx) zodat u de laatste vraag kan beantwoorden. 
 
 <img src=Extra5.jpg width="500">
 <img src=Extra6.jpg width="500">
