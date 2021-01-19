@@ -1,6 +1,9 @@
+#!/usr/bin/env python3
+import argparse
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
+from selenium.common.exceptions import WebDriverException 
 import time
 import dateparser
 import re
@@ -9,13 +12,18 @@ import json
 import datetime
 from sys import argv
 
-driver_location = argv[1]
-filename = argv[2]
 
-def scrape_links():
+
+def scrape_links(geckopath=None, filename="output.json"):
     #Set up Selenium
-    browser = webdriver.Firefox(executable_path = driver_location)
-
+    if geckopath:
+        browser = webdriver.Firefox(executable_path = geckopath)
+    else:
+        try:
+            browser = webdriver.Firefox()
+        except WebDriverException:
+            print("Geckodriver not found. Either copy the geckodriver to your path or specify its location")
+            return None
     #Get website, allow 15 seconds to scan the QR code
     browser.get("https://web.whatsapp.com/")
     time.sleep(15)
@@ -159,7 +167,12 @@ def scrape_links():
     return links_per_chat
 
 if __name__ == '__main__':
-    scrape_links()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--geckopath", help="Path to your gecko driver (necessary if not in $PATH)")
+    parser.add_argument("--output", help="File to store the output")
+    args = parser.parse_args()
+
+    scrape_links(geckopath = args.geckopath)
 
 #def anonymize_data(whatsapp_data):
     #Todo: Hash all the names of the chats/senders
