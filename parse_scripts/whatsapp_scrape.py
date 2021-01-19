@@ -30,7 +30,7 @@ class Whatsapp():
 
     
     def scrape_links(self):
-        '''Retrieves all *links* that are shared in the Whatsapp scraper instance'''
+        '''Yields the *links* per chat that are shared in the Whatsapp scraper instance'''
 
         #Get all the chats, sort them by date to know which one is first/last and save it into a list
         chats = []
@@ -38,7 +38,6 @@ class Whatsapp():
         n = 0
         maintext = self.browser.find_element_by_xpath('//h1').text
         language = detect(maintext)
-        links_per_chat = []
         while True:
             #Get language
             #Get names of chats
@@ -133,7 +132,7 @@ class Whatsapp():
                     text = [t.text for t in text]
                     message = {"link":link_final, "text":text}
                     messages_out.append(message)
-                links_per_chat.append({'chatname':c[1], "date":c[2], "messages_in":messages_in, "messages_out":messages_out})
+                yield {'chatname':c[1], "date":c[2], "messages_in":messages_in, "messages_out":messages_out}
 
             #Scroll down to get the next group of chats
             if n == 0:
@@ -164,16 +163,12 @@ class Whatsapp():
             if n == 1:
                 break
         self.browser.quit()
-        return links_per_chat
 
 
-def save_links_to_file(links_per_chat, filename="output.json"):
-    def myconverter(o):
-        if isinstance(o, datetime.datetime):
-            return o.__str__()
-    with open(filename, 'w') as fout:
-        json.dump(links_per_chat , fout, default = myconverter)
 
+def myconverter(o):
+    if isinstance(o, datetime.datetime):
+        return o.__str__()
 
     
 if __name__ == '__main__':
@@ -185,14 +180,19 @@ if __name__ == '__main__':
     #Get website, allow 15 seconds to scan the QR code
     myscraper = Whatsapp(geckopath=args.geckopath)
     time.sleep(15)
-    links_per_chat = myscraper.scrape_links()
-    
+
+        
     if args.output:
         filename = args.output
     else:
         filename = "output.json"
-        
-    save_links_to_file(links_per_chat, filename)
+
+    with open(filename, 'w') as fout:
+        for i, chatlinks in enumerate(myscraper.scrape_links()):
+            print(f"Scraped links from chat number {i}...")
+            fout.write(json.dumps(chatlinks, default = myconverter))
+            fout.write('\n')
+
 
     print(f"Done. All links saved to {filename}")
 
