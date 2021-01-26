@@ -27,6 +27,8 @@ class Whatsapp():
                 print("Geckodriver not found. Either copy the geckodriver to your path or specify its location")
                 raise
         self.browser.get("https://web.whatsapp.com/")
+        #immediately blur the page
+        self.browser.execute_script("document.getElementsByTagName('body')[0].style.filter = 'blur(30px)';")
 
     
     def scrape_links(self):
