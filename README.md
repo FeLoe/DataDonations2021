@@ -1,4 +1,4 @@
-# Lab2020
+# Lab2021
 In this repository, you can find the material for organising a Mobile Lab for collecting different data takeouts (such as Facebook, Twitter etc) as well as collecting (synced) browsing histories from participants on the spot. 
 
 The general idea is that people only need to bring their phone, all of the data extraction can be done from this. This repository includes
