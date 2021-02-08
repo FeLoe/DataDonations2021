@@ -12,6 +12,8 @@ import json
 import datetime
 from sys import argv
 
+from urllib.parse import urlparse
+from urllib.parse import parse_qs
 
 
 
@@ -27,8 +29,6 @@ class Whatsapp():
                 print("Geckodriver not found. Either copy the geckodriver to your path or specify its location")
                 raise
         self.browser.get("https://web.whatsapp.com/")
-        #immediately blur the page
-        self.browser.execute_script("document.getElementsByTagName('body')[0].style.filter = 'blur(30px)';")
 
     
     def scrape_links(self):
@@ -122,19 +122,21 @@ class Whatsapp():
                 messages_out = []
                 for link in inlinks: 
                     link_final = link.get_attribute('href')
+                    link_final = anonymize_url(link_final, origin = 'in')
                     text = link.find_elements_by_xpath('..')
-                    text = [t.text for t in text]
+                    text = [re.sub(r'@\d+', '', t.text) for t in text]
                     sender = link.find_elements_by_xpath('../../../../preceding-sibling::div/span[@dir = "auto"]|../preceding-sibling::div/div/span[@dir = "auto"]')
-                    sender = [s.text for s in sender]
+                    sender = [hash(s.text) for s in sender]
                     message = {"link":link_final, "text":text, "sender":sender}
                     messages_in.append(message)
                 for link in outlinks:
                     link_final = link.get_attribute('href')
+                    link_final = anonymize_url(link_final, origin = 'out')
                     text = link.find_elements_by_xpath('..')
-                    text = [t.text for t in text]
+                    text = [re.sub(r'@\d+', '', t.text) for t in text]
                     message = {"link":link_final, "text":text}
                     messages_out.append(message)
-                yield {'chatname':c[1], "date":c[2], "messages_in":messages_in, "messages_out":messages_out}
+                yield {'chatname':hash(c[1]), "date":c[2], "messages_in":messages_in, "messages_out":messages_out}
 
             #Scroll down to get the next group of chats
             if n == 0:
@@ -172,6 +174,14 @@ def myconverter(o):
     if isinstance(o, datetime.datetime):
         return o.__str__()
 
+def anonymize_url(link, origin):
+    base = urlparse(link)
+    stripped_link = base.scheme + '://' + base.netloc + base.path
+    queries = parse_qs(base.query)
+    #Get search queries from search engines (Google, Bing, Yahoo, DuckDuckGo, Ecosia), Youtube and large Dutch media providers
+    queries_keep = {k: v for k, v in queries.items() if k in ['v', 'q', 'p', 's', 'query', 'keyword', 'term']}
+    return({"link":stripped_link, "query":queries_keep})
+
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -182,6 +192,9 @@ if __name__ == '__main__':
     #Get website, allow 15 seconds to scan the QR code
     myscraper = Whatsapp(geckopath=args.geckopath)
     time.sleep(15)
+    #then blur the page
+    self.browser.execute_script("document.getElementsByTagName('body')[0].style.filter = 'blur(30px)';")
+
 
         
     if args.output:
@@ -199,10 +212,5 @@ if __name__ == '__main__':
     print(f"Done. All links saved to {filename}")
 
     
-#def anonymize_data(whatsapp_data):
-    #Todo: Hash all the names of the chats/senders
-    #Todo: For all links from the other person: whitelist
-    #Todo: For all text from the other person: only get common words?
-    #Todo: Remove all identifiers from the URLs
 
 
